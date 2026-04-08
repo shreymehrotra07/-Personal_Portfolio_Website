@@ -15,28 +15,28 @@ const FALLBACK_PROJECTS = [
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
     category: 'Web Design',
-    liveUrl: 'https://shrey-portfolio.com',
-    repoUrl: 'https://github.com/shreymehrotra07/portfolio',
+    liveUrl: 'https://personal-portfolio-website-seven-olive.vercel.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/-Personal_Portfolio_Website',
     featured: true,
   },
   {
     _id: 2,
-    title: 'Weather Dashboard',
+    title: 'MED SPACE Healthcare Management',
     description:
-      'Real-time weather dashboard with location-based forecasts and interactive maps.',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500',
-    technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      'Full-stack healthcare management system for handling patient records, appointments, and medical data with efficient backend APIs.',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500',
+    technologies: ['Node.js', 'Express.js', 'MongoDB'],
     category: 'Web Development',
-    liveUrl: 'https://weather-dashboard.com',
-    repoUrl: 'https://github.com/shreymehrotra07/weather',
-    featured: false,
+    liveUrl: 'https://medspace-healthcare.com',
+    repoUrl: 'https://github.com/shreymehrotra07/medspace-healthcare',
+    featured: true
   },
 ];
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading]   = useState(true);
-  const [filter, setFilter]     = useState('All');
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState('All');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
-  const categories      = ['All', ...new Set(projects.map((p) => p.category))];
+  const categories = ['All', ...new Set(projects.map((p) => p.category))];
   const filteredProjects = filter === 'All' ? projects : projects.filter((p) => p.category === filter);
 
   const stagger = {
@@ -152,21 +152,19 @@ const Projects = () => {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 + i * 0.07 }}
-                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium text-sm transition-all text-left ${
-                      filter === category
-                        ? 'bg-primary text-dark-900 shadow-lg shadow-primary/25'
-                        : 'glass text-light-700 hover:text-primary hover:border-primary/50 border border-white/10'
-                    }`}
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium text-sm transition-all text-left ${filter === category
+                      ? 'bg-primary text-dark-900 shadow-lg shadow-primary/25'
+                      : 'glass text-light-700 hover:text-primary hover:border-primary/50 border border-white/10'
+                      }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
                   >
                     <span>{category}</span>
                     <span
-                      className={`text-xs px-2 py-0.5 rounded-full ${
-                        filter === category
-                          ? 'bg-dark-900/20 text-dark-900'
-                          : 'bg-white/5 text-light-700/50'
-                      }`}
+                      className={`text-xs px-2 py-0.5 rounded-full ${filter === category
+                        ? 'bg-dark-900/20 text-dark-900'
+                        : 'bg-white/5 text-light-700/50'
+                        }`}
                     >
                       {count}
                     </span>
