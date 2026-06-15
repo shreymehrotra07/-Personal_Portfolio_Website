@@ -63,9 +63,10 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error("EmailJS Error:", error);
       setStatus({
         type: 'error',
-        message: "Something went wrong. Please try again.",
+        message: error.text || error.message || "Something went wrong. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -105,7 +106,7 @@ const Contact = () => {
             Get In Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
-            Let's Build Something
+            Let's Work Together
             <span className="text-primary">.</span>
           </h2>
           <motion.div
@@ -116,7 +117,7 @@ const Contact = () => {
           />
         </motion.div>
         <motion.p variants={fadeUp} className="text-light-700 text-lg max-w-lg mt-4">
-          Have a question or want to work together? Drop me a message and I'll respond within 24 hours.
+          Looking for a Full Stack Developer skilled in React.js, Node.js, MongoDB and problem solving? Feel free to connect with me.
         </motion.p>
       </motion.section>
 
@@ -138,7 +139,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-light-900 font-semibold text-sm">Available for Projects</p>
-              <p className="text-light-700 text-xs mt-0.5">Open to freelance &amp; full-time roles</p>
+              <p className="text-light-700 text-xs mt-0.5">Open for internships, full-time roles & collaborations</p>
             </div>
           </div>
 
@@ -156,7 +157,7 @@ const Contact = () => {
             <ContactRow
               icon={<FaMapMarkerAlt size={16} />}
               label="Location"
-              value="Shahjahanpur, UP, India"
+              value="Mathura, Uttar Pradesh, India"
               href="#"
             />
           </div>
@@ -201,7 +202,7 @@ const Contact = () => {
                   onBlur={() => setFocused('')}
                   required
                   className={inputClass('name')}
-                  placeholder="John Doe"
+                  placeholder="xyz"
                 />
               </FloatingField>
 
@@ -216,7 +217,7 @@ const Contact = () => {
                   onBlur={() => setFocused('')}
                   required
                   className={inputClass('email')}
-                  placeholder="john@example.com"
+                  placeholder="xyz@example.com"
                 />
               </FloatingField>
             </div>

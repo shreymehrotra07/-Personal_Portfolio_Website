@@ -202,9 +202,9 @@ const Resume = () => {
               </p>
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  { value: "2+", label: "Years Coding" },
-                  { value: "1+", label: "Internship" },
-                  { value: "3", label: "Degrees" },
+                  { value: "3+", label: "Years Coding" },
+                  { value: "1", label: "Internship" },
+                  { value: "350+", label: "DSA Problems" },
                 ].map((stat, i) => (
                   <motion.div
                     key={stat.label}

@@ -6,27 +6,51 @@ const SkillsPage = () => {
     {
       title: "Languages",
       icon: <FaCode size={14} />,
-      items: ["Java", "Python", "SQL"],
+      items: ["C", "Java", "Python", "SQL"],
     },
     {
       title: "Technologies",
       icon: <FaLaptopCode size={14} />,
-      items: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js", "MongoDB"],
+      items: [
+"HTML",
+"CSS",
+"JavaScript",
+"React.js",
+"Tailwind CSS",
+"Node.js",
+"Express.js",
+"MongoDB"
+]
     },
     {
       title: "CS Fundamentals",
       icon: <FaDatabase size={14} />,
-      items: ["DBMS", "Operating Systems", "Computer Networks"],
+      items:[
+"DBMS",
+"Operating Systems",
+"Computer Networks",
+"DSA"
+]
     },
+    {
+ title: "Tools",
+ icon: <FaUser size={14} />,
+ items: [
+   "GitHub",
+   "VS Code",
+   "Postman",
+   "Canva"
+ ]
+},
   ];
 
   const softSkills = [
-    { label: "Effective Communication", emoji: "💬" },
-    { label: "Team Work", emoji: "🤝" },
-    { label: "Interpersonal Skills", emoji: "🌐" },
-    { label: "Problem Solving", emoji: "🧩" },
-    { label: "Adaptability", emoji: "⚡" },
-  ];
+{label:"Teamwork",emoji:"🤝"},
+{label:"Leadership",emoji:"🚀"},
+{label:"Team Collaboration",emoji:"👥"},
+{label:"Problem Solving",emoji:"🧩"},
+{label:"Communication",emoji:"💬"}
+]
 
   const stagger = {
     hidden: {},
@@ -63,7 +87,7 @@ const SkillsPage = () => {
           />
         </motion.div>
         <motion.p variants={fadeUp} className="text-light-700 text-lg max-w-lg mt-4">
-          A snapshot of the tools, technologies, and traits I bring to every project.
+          Skilled in Full Stack Development,Problem Solving, and building scalable web applications.
         </motion.p>
       </motion.section>
 
@@ -84,8 +108,8 @@ const SkillsPage = () => {
               <div className="absolute inset-0 w-3 h-3 rounded-full bg-green-400 animate-ping opacity-50" />
             </div>
             <div>
-              <p className="text-light-900 font-semibold text-sm">Active Learner</p>
-              <p className="text-light-700 text-xs mt-0.5">Expanding stack daily</p>
+              <p className="text-light-900 font-semibold text-sm">Full Stack Developer</p>
+              <p className="text-light-700 text-xs mt-0.5">Learning & Building Every Day</p>
             </div>
           </div>
 
@@ -128,7 +152,7 @@ const SkillsPage = () => {
           <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
             <div className="absolute top-4 right-5 text-5xl font-serif text-primary/10 leading-none select-none">"</div>
             <p className="text-light-700 text-sm leading-relaxed italic relative z-10">
-              Skills are built project by project. Every line of code is a step forward.
+              I enjoy solving problems, building scalable applications, and continuously learning modern technologies.
             </p>
             <div className="mt-4 flex items-center gap-2">
               <div className="h-px flex-1 bg-white/10" />
@@ -178,10 +202,10 @@ const SkillsPage = () => {
               </p>
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  { value: "7+", label: "Technologies" },
-                  { value: "3+", label: "Languages" },
-                  { value: "5+", label: "Soft Skills" },
-                ].map((stat, i) => (
+{value:"8+",label:"Technologies"},
+{value:"4+",label:"Languages"},
+{value:"4+",label:"Tools"}
+].map((stat, i) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 10 }}

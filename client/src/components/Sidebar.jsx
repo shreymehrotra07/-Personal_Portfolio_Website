@@ -32,7 +32,7 @@ const Sidebar = ({ profile }) => {
     {
       icon: FaMapMarkerAlt,
       label: 'Location',
-      value: 'Shahjahanpur, Uttar Pradesh',
+      value: 'Mathura, Uttar Pradesh',
       href: null,
     },
   ];

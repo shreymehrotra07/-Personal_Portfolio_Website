@@ -11,9 +11,9 @@ const FALLBACK_PROJECTS = [
     _id: 1,
     title: 'Portfolio Website',
     description:
-      'Modern personal portfolio website showcasing projects and skills with smooth animations.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500',
-    technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+      'A modern and responsive portfolio website showcasing my projects, technical skills, internship experience, and achievements. Built with smooth animations and an intuitive user interface to create a professional online presence.',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500',
+    technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'Framer Motion', 'Vercel', 'Git', 'GitHub'],
     category: 'Web Design',
     liveUrl: 'https://personal-portfolio-website-seven-olive.vercel.app/',
     repoUrl: 'https://github.com/shreymehrotra07/-Personal_Portfolio_Website',
@@ -23,14 +23,66 @@ const FALLBACK_PROJECTS = [
     _id: 2,
     title: 'MED SPACE Healthcare Management',
     description:
-      'Full-stack healthcare management system for handling patient records, appointments, and medical data with efficient backend APIs.',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500',
-    technologies: ['Node.js', 'Express.js', 'MongoDB'],
+      'A full-stack healthcare management platform that streamlines patient registration, appointment scheduling, medical record management, and healthcare administration through a secure and responsive web application.',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500',
+    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
     category: 'Web Development',
     liveUrl: 'https://medspace-healthcare.com',
     repoUrl: 'https://github.com/shreymehrotra07/medspace-healthcare',
     featured: true
   },
+  {
+    _id: 3,
+    title: 'EMATBS - Event Management & Ticket Booking System',
+    description:
+      'Full-stack event management platform that enables users to discover events, book tickets, and manage reservations, while providing organizers with tools to create and manage events efficiently.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=500',
+    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
+    category: 'Web Development',
+    liveUrl: 'https://event-management-and-ticket-booking-lac.vercel.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/EMATBS',
+    featured: true
+  },
+  {
+    _id: 4,
+    title: 'QuotePulse - Daily Quotes Generator',
+    description:
+      'A responsive quote generator application that delivers inspiring and motivational quotes with a clean user interface. Users can discover new quotes instantly and enjoy a smooth, interactive experience across all devices.',
+    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500',
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'REST API',
+      'Netlify',
+      'Git',
+      'GitHub'
+    ],
+    category: 'Web Application',
+    liveUrl: 'https://celebrated-profiterole-9b2719.netlify.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/QuotePulse',
+    featured: true,
+  },
+  {
+    _id: 5,
+    title: 'TaskFlow - Task Management Application',
+    description:
+      'A modern task management application that helps users organize, prioritize, and track daily tasks efficiently. Features an intuitive interface, task status management, and responsive design to enhance productivity across devices.',
+    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500',
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Local Storage',
+      'Netlify',
+      'Git',
+      'GitHub'
+    ],
+    category: 'Productivity Application',
+    liveUrl: 'https://gorgeous-dragon-a4541d.netlify.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/TaskFlow',
+    featured: true,
+  }
 ];
 
 const Projects = () => {
@@ -112,9 +164,9 @@ const Projects = () => {
             </p>
             <div className="grid grid-cols-3 gap-3">
               {[
-                { value: projects.length || '4+', label: 'Projects' },
-                { value: projects.filter((p) => p.featured).length || '2', label: 'Featured' },
-                { value: [...new Set(projects.map((p) => p.category))].length || '3', label: 'Categories' },
+                { value: projects.length || '', label: 'Projects' },
+                { value: projects.filter((p) => p.featured).length || '', label: 'Featured' },
+                { value: [...new Set(projects.map((p) => p.category))].length || '', label: 'Categories' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
