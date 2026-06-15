@@ -35,12 +35,12 @@ const About = () => {
       className="space-y-10"
     >
       {/* ── Header ── */}
-      <motion.section variants={stagger} initial="hidden" animate="show">
+      <motion.section variants={stagger} initial="hidden" animate="show" className="hidden sm:block">
         <motion.div variants={fadeUp} className="relative inline-block mb-3">
           <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 mb-2 block">
             Who I Am
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-900 leading-tight">
             About Me
             <span className="text-primary">.</span>
           </h2>
@@ -57,7 +57,7 @@ const About = () => {
       </motion.section>
 
       {/* ── Main Grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
 
         {/* ── Left Panel ── */}
         <motion.aside
@@ -131,9 +131,9 @@ const About = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <div className="glass-card rounded-2xl p-8 h-full flex flex-col justify-between gap-8">
+          <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col justify-between gap-6 sm:gap-8">
             <div>
-              <h3 className="text-xl font-bold text-light-900 mb-6">My Story</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-light-900 mb-4 sm:mb-6">My Story</h3>
 
               <div className="space-y-5 text-light-700 leading-relaxed">
                 {[

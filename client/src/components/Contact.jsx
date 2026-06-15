@@ -100,12 +100,12 @@ const Contact = () => {
       className="space-y-10"
     >
       {/* ── Header ── */}
-      <motion.section variants={stagger} initial="hidden" animate="show">
+      <motion.section variants={stagger} initial="hidden" animate="show" className="hidden sm:block">
         <motion.div variants={fadeUp} className="relative inline-block mb-3">
           <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 mb-2 block">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-900 leading-tight">
             Let's Work Together
             <span className="text-primary">.</span>
           </h2>
@@ -122,7 +122,7 @@ const Contact = () => {
       </motion.section>
 
       {/* ── Main Grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
 
         {/* ── Left Panel ── */}
         <motion.aside
@@ -185,9 +185,9 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="glass-card rounded-2xl p-8 space-y-5"
+            className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-5"
           >
-            <h3 className="text-xl font-bold text-light-900 mb-6">Send a Message</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-light-900 mb-4 sm:mb-6">Send a Message</h3>
 
             {/* Name + Email Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

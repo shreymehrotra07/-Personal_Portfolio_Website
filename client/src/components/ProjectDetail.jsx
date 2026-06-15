@@ -18,44 +18,78 @@ const FALLBACK = [
     _id: 1,
     title: 'Portfolio Website',
     description:
-      'Modern personal portfolio website showcasing projects and skills with smooth animations. Built with React and Tailwind CSS, this portfolio features a clean, dark aesthetic with glassmorphism cards, Framer Motion animations, and a fully responsive layout.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900',
-    technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite', 'Node.js'],
+      'A modern and responsive portfolio website showcasing my projects, technical skills, internship experience, and achievements. Built with smooth animations and an intuitive user interface to create a professional online presence.',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500',
+    technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'Framer Motion', 'Vercel', 'Git', 'GitHub'],
     category: 'Web Design',
-    liveUrl: 'https://shrey-portfolio.com',
-    repoUrl: 'https://github.com/shreymehrotra07/portfolio',
+    liveUrl: 'https://personal-portfolio-website-seven-olive.vercel.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/-Personal_Portfolio_Website',
     featured: true,
-    year: '2024',
-    role: 'Full-Stack Developer',
-    status: 'Live',
-    highlights: [
-      'Smooth page transitions with Framer Motion',
-      'Glassmorphism UI with dark theme',
-      'Fully responsive across all devices',
-      'REST API integration for dynamic content',
-    ],
   },
   {
     _id: 2,
-    title: 'Weather Dashboard',
+    title: 'MED SPACE Healthcare Management',
     description:
-      'Real-time weather dashboard with location-based forecasts and interactive maps. Displays 7-day forecasts, hourly breakdowns, and weather alerts fetched from the OpenWeather API, all visualised with Chart.js.',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=900',
-    technologies: ['JavaScript', 'OpenWeather API', 'Chart.js', 'CSS3', 'HTML5'],
+      'A full-stack healthcare management platform that streamlines patient registration, appointment scheduling, medical record management, and healthcare administration through a secure and responsive web application.',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500',
+    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
     category: 'Web Development',
-    liveUrl: 'https://weather-dashboard.com',
-    repoUrl: 'https://github.com/shreymehrotra07/weather',
-    featured: false,
-    year: '2023',
-    role: 'Frontend Developer',
-    status: 'Live',
-    highlights: [
-      'Real-time data from OpenWeather API',
-      'Interactive Chart.js visualisations',
-      'Geolocation-based auto-detection',
-      '7-day & hourly forecast views',
-    ],
+    liveUrl: 'https://medspace-healthcare.com',
+    repoUrl: 'https://github.com/shreymehrotra07/medspace-healthcare',
+    featured: true
   },
+  {
+    _id: 3,
+    title: 'EMATBS - Event Management & Ticket Booking System',
+    description:
+      'Full-stack event management platform that enables users to discover events, book tickets, and manage reservations, while providing organizers with tools to create and manage events efficiently.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=500',
+    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
+    category: 'Web Development',
+    liveUrl: 'https://event-management-and-ticket-booking-lac.vercel.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/EMATBS',
+    featured: true
+  },
+  {
+    _id: 4,
+    title: 'QuotePulse - Daily Quotes Generator',
+    description:
+      'A responsive quote generator application that delivers inspiring and motivational quotes with a clean user interface. Users can discover new quotes instantly and enjoy a smooth, interactive experience across all devices.',
+    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500',
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'REST API',
+      'Netlify',
+      'Git',
+      'GitHub'
+    ],
+    category: 'Web Application',
+    liveUrl: 'https://celebrated-profiterole-9b2719.netlify.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/QuotePulse',
+    featured: true,
+  },
+  {
+    _id: 5,
+    title: 'TaskFlow - Task Management Application',
+    description:
+      'A modern task management application that helps users organize, prioritize, and track daily tasks efficiently. Features an intuitive interface, task status management, and responsive design to enhance productivity across devices.',
+    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500',
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Local Storage',
+      'Netlify',
+      'Git',
+      'GitHub'
+    ],
+    category: 'Productivity Application',
+    liveUrl: 'https://gorgeous-dragon-a4541d.netlify.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/TaskFlow',
+    featured: true,
+  }
 ];
 
 const stagger = {
@@ -75,8 +109,8 @@ const fadeUp = {
 const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [project, setProject]   = useState(null);
-  const [loading, setLoading]   = useState(true);
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [imgLoaded, setImgLoaded] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
 
@@ -212,31 +246,7 @@ const ProjectDetail = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.5 }}
         >
-          {/* Meta card */}
-          <div className="glass-card rounded-2xl p-6">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-4">
-              Project Info
-            </p>
-            <div className="flex flex-col gap-3">
-              {[
-                { label: 'Role',     value: project.role     || 'Developer' },
-                { label: 'Year',     value: project.year     || '2024' },
-                { label: 'Category', value: project.category },
-                { label: 'Status',   value: project.status   || 'Live' },
-              ].map((item, i) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.35 + i * 0.07 }}
-                  className="flex items-center justify-between py-2.5 border-b border-white/5 last:border-0"
-                >
-                  <span className="text-xs text-light-700/50">{item.label}</span>
-                  <span className="text-sm font-medium text-light-900">{item.value}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+
 
           {/* Links card */}
           <div className="glass-card rounded-2xl p-6">
@@ -274,6 +284,7 @@ const ProjectDetail = () => {
               )}
             </div>
           </div>
+          
 
           {/* Tech pills */}
           <div className="glass-card rounded-2xl p-6">
@@ -313,9 +324,8 @@ const ProjectDetail = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`relative px-4 py-2 rounded-lg text-xs font-semibold capitalize transition-all ${
-                    activeTab === tab ? 'text-dark-900' : 'text-light-700/60 hover:text-primary'
-                  }`}
+                  className={`relative px-4 py-2 rounded-lg text-xs font-semibold capitalize transition-all ${activeTab === tab ? 'text-dark-900' : 'text-light-700/60 hover:text-primary'
+                    }`}
                 >
                   {activeTab === tab && (
                     <motion.div
@@ -338,48 +348,65 @@ const ProjectDetail = () => {
                   initial="hidden"
                   animate="show"
                   exit={{ opacity: 0, y: -8 }}
-                  className="flex flex-col gap-5"
+                  className="flex flex-col gap-4"
                 >
-                  <motion.div variants={fadeUp}>
+                  <motion.div
+                    variants={fadeUp}
+                    className="glass rounded-xl p-5 border border-white/10"
+                  >
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="w-7 h-7 rounded-lg glass flex items-center justify-center text-primary text-xs">⬡</div>
-                      <h3 className="text-lg font-bold text-light-900">About this project</h3>
-                    </div>
-                    <p className="text-light-700 text-sm leading-relaxed">{project.description}</p>
-                  </motion.div>
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                        <FaLayerGroup size={12} />
+                      </div>
 
-                  <motion.div variants={fadeUp} className="grid grid-cols-3 gap-3 mt-2">
-                    {[
-                      { icon: <FaCode size={14} />,       value: project.technologies.length,    label: 'Technologies' },
-                      { icon: <FaLayerGroup size={14} />, value: project.highlights?.length || 4, label: 'Key Features' },
-                      { icon: <FaStar size={14} />,       value: project.featured ? 'Yes' : 'No', label: 'Featured' },
-                    ].map((stat, i) => (
-                      <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 + i * 0.08 }}
-                        className="glass rounded-xl p-4 text-center border border-white/10"
-                      >
-                        <p className="text-primary flex justify-center mb-1">{stat.icon}</p>
-                        <p className="text-xl font-bold text-light-900">{stat.value}</p>
-                        <p className="text-[10px] text-light-700/50 mt-0.5">{stat.label}</p>
-                      </motion.div>
-                    ))}
+                      <h3 className="text-lg font-bold text-light-900">
+                        Project Overview
+                      </h3>
+                    </div>
+
+                    <p className="text-light-700 leading-relaxed text-sm">
+                      {project.description}
+                    </p>
                   </motion.div>
 
                   <motion.div
                     variants={fadeUp}
-                    className="relative glass rounded-xl p-5 border border-white/10 overflow-hidden"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-3"
                   >
-                    <div className="absolute top-3 right-4 text-3xl font-serif text-primary/8 leading-none select-none">✦</div>
-                    <p className="text-light-700/70 text-xs leading-relaxed italic">
-                      "Built with attention to detail, performance, and developer experience in mind."
-                    </p>
-                    <div className="mt-3 flex items-center gap-2">
-                      <div className="h-px flex-1 bg-white/10" />
-                      <span className="text-primary text-xs font-semibold tracking-wide">Shrey</span>
-                    </div>
+                    {[
+                      {
+                        icon: <FaCode size={14} />,
+                        value: project.technologies.length,
+                        label: 'Technologies',
+                      },
+                      {
+                        icon: <FaLayerGroup size={14} />,
+                        value: project.highlights?.length || 4,
+                        label: 'Features',
+                      },
+                      {
+                        icon: <FaStar size={14} />,
+                        value: project.status || 'Live',
+                        label: 'Status',
+                      },
+                    ].map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="glass rounded-xl p-4 border border-white/10 text-center"
+                      >
+                        <div className="flex justify-center text-primary mb-2">
+                          {stat.icon}
+                        </div>
+
+                        <h4 className="text-lg font-bold text-light-900">
+                          {stat.value}
+                        </h4>
+
+                        <p className="text-xs text-light-700/60">
+                          {stat.label}
+                        </p>
+                      </div>
+                    ))}
                   </motion.div>
                 </motion.div>
               )}
@@ -428,34 +455,58 @@ const ProjectDetail = () => {
                   initial="hidden"
                   animate="show"
                   exit={{ opacity: 0, y: -8 }}
-                  className="flex flex-col gap-3"
+                  className="flex flex-col gap-2"
                 >
-                  <motion.div variants={fadeUp} className="flex items-center gap-2 mb-1">
+                  <motion.div
+                    variants={fadeUp}
+                    className="flex items-center gap-2 mb-1"
+                  >
                     <div className="w-7 h-7 rounded-lg glass flex items-center justify-center text-primary text-xs">
                       <FaCode size={11} />
                     </div>
-                    <h3 className="text-lg font-bold text-light-900">Technologies Used</h3>
+                    <h3 className="text-lg font-bold text-light-900">
+                      Technologies Used
+                    </h3>
                   </motion.div>
 
-                  {project.technologies.map((tech, i) => (
-                    <motion.div
-                      key={tech}
-                      variants={fadeUp}
-                      whileHover={{ x: 4 }}
-                      className="flex items-center justify-between glass rounded-xl px-5 py-3.5 border border-white/10 hover:border-primary/30 transition-all group"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
-                        <span className="text-sm font-medium text-light-900">{tech}</span>
-                      </div>
+                  {project.technologies.map((tech, i) => {
+                    const percentage = Math.max(50, 95 - i * 7);
+
+                    return (
                       <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${Math.max(30, 100 - i * 13)}%` }}
-                        transition={{ delay: 0.4 + i * 0.06, duration: 0.6, ease: 'easeOut' }}
-                        className="h-1 bg-gradient-to-r from-primary/60 to-primary/20 rounded-full max-w-[100px]"
-                      />
-                    </motion.div>
-                  ))}
+                        key={tech}
+                        variants={fadeUp}
+                        whileHover={{ scale: 1.01 }}
+                        className="glass rounded-lg p-3 border border-white/10 hover:border-primary/30 transition-all"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-primary" />
+                            <span className="text-sm font-medium text-light-900">
+                              {tech}
+                            </span>
+                          </div>
+
+                          <span className="text-xs font-semibold text-primary">
+                            {percentage}%
+                          </span>
+                        </div>
+
+                        <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: `${percentage}%` }}
+                            transition={{
+                              delay: 0.2 + i * 0.08,
+                              duration: 0.8,
+                              ease: "easeOut",
+                            }}
+                            className="h-full bg-gradient-to-r from-primary to-primary/50 rounded-full"
+                          />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </motion.div>
               )}
             </AnimatePresence>

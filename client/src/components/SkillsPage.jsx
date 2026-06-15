@@ -70,12 +70,12 @@ const SkillsPage = () => {
       className="space-y-10"
     >
       {/* ── Header ── */}
-      <motion.section variants={stagger} initial="hidden" animate="show">
+      <motion.section variants={stagger} initial="hidden" animate="show" className="hidden sm:block">
         <motion.div variants={fadeUp} className="relative inline-block mb-3">
           <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 mb-2 block">
             What I Know
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-900 leading-tight">
             Skills
             <span className="text-primary">.</span>
           </h2>
@@ -92,7 +92,7 @@ const SkillsPage = () => {
       </motion.section>
 
       {/* ── Main Grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
 
         {/* ── Left Panel ── */}
         <motion.aside
@@ -168,9 +168,9 @@ const SkillsPage = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <div className="glass-card rounded-2xl p-8 h-full flex flex-col gap-8">
+          <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col gap-6 sm:gap-8">
             <div>
-              <h3 className="text-xl font-bold text-light-900 mb-6">Professional Skills</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-light-900 mb-4 sm:mb-6">Professional Skills</h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {softSkills.map((skill, i) => (
@@ -200,7 +200,7 @@ const SkillsPage = () => {
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-4">
                 At a Glance
               </p>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {[
 {value:"8+",label:"Technologies"},
 {value:"4+",label:"Languages"},

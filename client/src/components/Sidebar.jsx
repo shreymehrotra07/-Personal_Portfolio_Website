@@ -52,7 +52,7 @@ const Sidebar = ({ profile }) => {
 
   return (
     <motion.div
-      className="glass-card rounded-2xl p-6 md:p-8 sticky top-8 flex flex-col gap-6"
+      className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 lg:sticky lg:top-24 flex flex-col gap-4 sm:gap-6"
       initial={{ opacity: 0, x: -30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
@@ -62,42 +62,47 @@ const Sidebar = ({ profile }) => {
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="flex flex-col items-center text-center gap-4"
+        className="flex flex-col sm:items-center text-left sm:text-center gap-3 sm:gap-4"
       >
-        {/* Avatar with layered rings */}
-        <motion.div variants={fadeUp} className="relative">
-          <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
-          <div className="absolute inset-0 rounded-full border border-primary/10 scale-125" />
-          <motion.img
-            src={profile?.avatar || ''}
-            alt={profile?.name || 'Shrey Mehrotra'}
-            className="w-28 h-28 rounded-full border-2 border-primary/40 object-cover relative z-10"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          />
-          {/* Online indicator */}
-          <div className="absolute bottom-1 right-1 z-20">
-            <div className="w-3.5 h-3.5 rounded-full bg-green-400 border-2 border-dark-900" />
-            <div className="absolute inset-0 w-3.5 h-3.5 rounded-full bg-green-400 animate-ping opacity-50" />
+        {/* Mobile: horizontal layout | Desktop: vertical */}
+        <div className="flex items-center sm:flex-col gap-4 sm:gap-3">
+          {/* Avatar with layered rings */}
+          <motion.div variants={fadeUp} className="relative flex-shrink-0">
+            <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
+            <div className="absolute inset-0 rounded-full border border-primary/10 scale-125" />
+            <motion.img
+              src={profile?.avatar || ''}
+              alt={profile?.name || 'Shrey Mehrotra'}
+              className="w-16 h-16 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full border-2 border-primary/40 object-cover relative z-10"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            />
+            {/* Online indicator */}
+            <div className="absolute bottom-0.5 right-0.5 z-20">
+              <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-green-400 border-2 border-dark-900" />
+              <div className="absolute inset-0 w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-green-400 animate-ping opacity-50" />
+            </div>
+          </motion.div>
+
+          {/* Name + Role */}
+          <div className="min-w-0">
+            <motion.div variants={fadeUp}>
+              <span className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 block mb-0.5 sm:mb-1">
+                Portfolio
+              </span>
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-light-900 leading-tight truncate">
+                {profile?.name || 'Shrey Mehrotra'}
+              </h1>
+            </motion.div>
+
+            {/* Role badge */}
+            <motion.div variants={fadeUp} className="mt-1">
+              <span className="inline-block bg-primary/10 text-primary px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-semibold border border-primary/25 tracking-wide">
+                {profile?.role || 'Web Developer'}
+              </span>
+            </motion.div>
           </div>
-        </motion.div>
-
-        {/* Name */}
-        <motion.div variants={fadeUp}>
-          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 block mb-1">
-            Portfolio
-          </span>
-          <h1 className="text-2xl font-bold text-light-900 leading-tight">
-            {profile?.name || 'Shrey Mehrotra'}
-          </h1>
-        </motion.div>
-
-        {/* Role badge */}
-        <motion.div variants={fadeUp}>
-          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold border border-primary/25 tracking-wide">
-            {profile?.role || 'Web Developer'}
-          </span>
-        </motion.div>
+        </div>
 
         {/* Divider */}
         <motion.div
@@ -115,7 +120,7 @@ const Sidebar = ({ profile }) => {
         animate="show"
         className="flex flex-col gap-1"
       >
-        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-3">
+        <p className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-2 sm:mb-3">
           Contact
         </p>
 
@@ -159,7 +164,7 @@ const Sidebar = ({ profile }) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.55, duration: 0.45 }}
-        className="pt-2 border-t border-white/10"
+        className="pt-2 border-t border-white/10 hidden sm:block"
       >
         <p className="text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-3">
           Find me on
