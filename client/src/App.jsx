@@ -71,12 +71,12 @@ function AppLayout() {
         className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse pointer-events-none"
         style={{ animationDelay: '1s' }}
       />
-      <div className="container mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
-          <div className="lg:col-span-4 xl:col-span-3 lg:sticky lg:top-6 lg:self-start">
+      <div className="container mx-auto px-3 md:px-5 lg:px-6 py-3 md:py-5 lg:py-8 pb-16 md:pb-5 lg:pb-8 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-3 md:gap-5 lg:gap-8">
+          <div className="md:col-span-4 lg:col-span-4 xl:col-span-3 md:sticky md:top-5 lg:sticky lg:top-6 md:self-start lg:self-start">
             <Sidebar profile={currentProfile} />
           </div>
-          <div className="lg:col-span-8 xl:col-span-9 min-w-0">
+          <div className="md:col-span-8 lg:col-span-8 xl:col-span-9">
             <Navbar activeTab={activeTab} setActiveTab={handleTabChange} />
             <main className="fade-in">
               <Routes>

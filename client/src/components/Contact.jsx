@@ -63,10 +63,9 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error("EmailJS Error:", error);
       setStatus({
         type: 'error',
-        message: error.text || error.message || "Something went wrong. Please try again.",
+        message: "Something went wrong. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -97,7 +96,7 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="space-y-10"
+      className="space-y-6 md:space-y-10"
     >
       {/* ── Header ── */}
       <motion.section variants={stagger} initial="hidden" animate="show" className="hidden sm:block">
@@ -105,7 +104,7 @@ const Contact = () => {
           <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 mb-2 block">
             Get In Touch
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
             Let's Work Together
             <span className="text-primary">.</span>
           </h2>
@@ -122,17 +121,17 @@ const Contact = () => {
       </motion.section>
 
       {/* ── Main Grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-3 md:gap-5 lg:gap-6">
 
         {/* ── Left Panel ── */}
         <motion.aside
-          className="lg:col-span-2 flex flex-col gap-4"
+          className="md:col-span-2 lg:col-span-2 flex flex-col gap-3 md:gap-4"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           {/* Availability Badge */}
-          <div className="glass-card rounded-2xl p-6 flex items-center gap-4">
+          <div className="glass-card rounded-2xl p-4 md:p-6 flex items-center gap-3 md:gap-4">
             <div className="relative flex-shrink-0">
               <div className="w-3 h-3 rounded-full bg-green-400" />
               <div className="absolute inset-0 w-3 h-3 rounded-full bg-green-400 animate-ping opacity-50" />
@@ -144,7 +143,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Details */}
-          <div className="glass-card rounded-2xl p-6 space-y-5 flex-1">
+          <div className="glass-card rounded-2xl p-4 md:p-6 space-y-4 md:space-y-5 flex-1">
             <h3 className="text-lg font-bold text-light-900">Contact Details</h3>
 
             <ContactRow
@@ -163,7 +162,7 @@ const Contact = () => {
           </div>
 
           {/* Decorative Quote Card */}
-          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+          <div className="glass-card rounded-2xl p-4 md:p-6 relative overflow-hidden hidden lg:block">
             <div className="absolute top-4 right-5 text-6xl font-serif text-primary/10 leading-none select-none">"</div>
             <p className="text-light-700 text-sm leading-relaxed italic relative z-10">
               I believe great products are built through great collaboration. Let's create something remarkable together.
@@ -177,7 +176,7 @@ const Contact = () => {
 
         {/* ── Right Panel: Form ── */}
         <motion.div
-          className="lg:col-span-3"
+          className="md:col-span-3 lg:col-span-3"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -185,9 +184,9 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-5"
+            className="glass-card rounded-2xl p-4 md:p-8 space-y-4 md:space-y-5"
           >
-            <h3 className="text-lg sm:text-xl font-bold text-light-900 mb-4 sm:mb-6">Send a Message</h3>
+            <h3 className="text-xl font-bold text-light-900 mb-6">Send a Message</h3>
 
             {/* Name + Email Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

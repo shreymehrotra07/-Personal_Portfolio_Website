@@ -32,7 +32,7 @@ const About = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="space-y-10"
+      className="space-y-6 md:space-y-10"
     >
       {/* ── Header ── */}
       <motion.section variants={stagger} initial="hidden" animate="show" className="hidden sm:block">
@@ -40,7 +40,7 @@ const About = () => {
           <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 mb-2 block">
             Who I Am
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
             About Me
             <span className="text-primary">.</span>
           </h2>
@@ -57,17 +57,17 @@ const About = () => {
       </motion.section>
 
       {/* ── Main Grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-3 md:gap-5 lg:gap-6">
 
         {/* ── Left Panel ── */}
         <motion.aside
-          className="lg:col-span-2 flex flex-col gap-4"
+          className="md:col-span-2 lg:col-span-2 flex flex-col gap-3 md:gap-4"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           {/* Status Badge */}
-          <div className="glass-card rounded-2xl p-6 flex items-center gap-4">
+          <div className="glass-card rounded-2xl p-4 md:p-6 flex items-center gap-3 md:gap-4">
             <div className="relative flex-shrink-0">
               <div className="w-3 h-3 rounded-full bg-green-400" />
               <div className="absolute inset-0 w-3 h-3 rounded-full bg-green-400 animate-ping opacity-50" />
@@ -79,7 +79,7 @@ const About = () => {
           </div>
 
           {/* Skills Breakdown */}
-          <div className="glass-card rounded-2xl p-6 space-y-5 flex-1">
+          <div className="glass-card rounded-2xl p-4 md:p-6 space-y-4 md:space-y-5 flex-1">
             <h3 className="text-lg font-bold text-light-900">Skill Areas</h3>
             {skills.map((s, i) => (
               <motion.div
@@ -111,8 +111,8 @@ const About = () => {
             ))}
           </div>
 
-          {/* University Card */}
-          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+          {/* University Card — pushed to bottom on mobile via order */}
+          <div className="glass-card rounded-2xl p-4 md:p-6 relative overflow-hidden order-last md:order-none">
             <div className="absolute top-4 right-5 text-5xl font-serif text-primary/10 leading-none select-none">🎓</div>
             <p className="text-xs font-semibold tracking-wide uppercase text-light-700/60 mb-1">Education</p>
             <p className="text-light-900 font-bold">B.Tech Computer Science</p>
@@ -126,16 +126,16 @@ const About = () => {
 
         {/* ── Right Panel ── */}
         <motion.div
-          className="lg:col-span-3"
+          className="md:col-span-3 lg:col-span-3"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col justify-between gap-6 sm:gap-8">
+          <div className="glass-card rounded-2xl p-4 md:p-8 h-full flex flex-col justify-between gap-6 md:gap-8">
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-light-900 mb-4 sm:mb-6">My Story</h3>
+              <h3 className="text-xl font-bold text-light-900 mb-4 md:mb-6">My Story</h3>
 
-              <div className="space-y-5 text-light-700 leading-relaxed">
+              <div className="space-y-4 md:space-y-5 text-light-700 leading-relaxed">
                 {[
                   "I'm Shrey Mehrotra, a B.Tech Computer Science student at GLA University with a strong passion for web development. I enjoy building responsive, user-friendly websites that not only look good but also deliver a great user experience.",
                   "As a Frontend Developer, I work with HTML, CSS, Tailwind CSS, and JavaScript to bring creative ideas to life. I'm also currently learning Backend Development using Node.js, Express.js, and MongoDB, aiming to become a Full-Stack Developer.",
@@ -163,28 +163,30 @@ const About = () => {
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-4">
                 Resume
               </p>
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-2 md:gap-3">
                 <motion.button
                   onClick={handleDownload}
-                  className="flex items-center gap-2 bg-primary text-dark-900 px-6 py-3 rounded-xl font-bold tracking-wide hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 relative overflow-hidden group"
+                  className="flex-1 flex items-center justify-center gap-2 bg-primary text-dark-900 px-4 md:px-6 py-3 rounded-xl font-bold tracking-wide hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 relative overflow-hidden group"
                   whileHover={{ scale: 1.015 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
                   <FaDownload size={14} />
-                  Download Resume
+                  <span className="hidden sm:inline">Download Resume</span>
+                  <span className="sm:hidden">Download</span>
                 </motion.button>
 
                 <motion.a
                   href={`/${resumeFileName}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 glass text-light-700 px-6 py-3 rounded-xl hover:text-primary transition-colors font-medium border border-white/10 hover:border-primary/30"
+                  className="flex-1 flex items-center justify-center gap-2 glass text-light-700 px-4 md:px-6 py-3 rounded-xl hover:text-primary transition-colors font-medium border border-white/10 hover:border-primary/30"
                   whileHover={{ scale: 1.015 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <FaExternalLinkAlt size={13} />
-                  Open Resume
+                  <span className="hidden sm:inline">Open Resume</span>
+                  <span className="sm:hidden">View</span>
                 </motion.a>
               </div>
             </div>

@@ -67,7 +67,7 @@ const SkillsPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="space-y-10"
+      className="space-y-6 md:space-y-10"
     >
       {/* ── Header ── */}
       <motion.section variants={stagger} initial="hidden" animate="show" className="hidden sm:block">
@@ -75,7 +75,7 @@ const SkillsPage = () => {
           <span className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/70 mb-2 block">
             What I Know
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-light-900 leading-tight">
             Skills
             <span className="text-primary">.</span>
           </h2>
@@ -92,17 +92,17 @@ const SkillsPage = () => {
       </motion.section>
 
       {/* ── Main Grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-3 md:gap-5 lg:gap-6">
 
         {/* ── Left Panel ── */}
         <motion.aside
-          className="lg:col-span-2 flex flex-col gap-4"
+          className="md:col-span-2 lg:col-span-2 flex flex-col gap-3 md:gap-4"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           {/* Stack count badge */}
-          <div className="glass-card rounded-2xl p-6 flex items-center gap-4">
+          <div className="glass-card rounded-2xl p-4 md:p-6 flex items-center gap-3 md:gap-4">
             <div className="relative flex-shrink-0">
               <div className="w-3 h-3 rounded-full bg-green-400" />
               <div className="absolute inset-0 w-3 h-3 rounded-full bg-green-400 animate-ping opacity-50" />
@@ -114,7 +114,7 @@ const SkillsPage = () => {
           </div>
 
           {/* Skill category cards */}
-          <div className="glass-card rounded-2xl p-6 space-y-6 flex-1">
+          <div className="glass-card rounded-2xl p-4 md:p-6 space-y-4 md:space-y-6 flex-1">
             <h3 className="text-lg font-bold text-light-900">Technical Stack</h3>
 
             {sections.map((section, i) => (
@@ -149,7 +149,7 @@ const SkillsPage = () => {
           </div>
 
           {/* Decorative quote */}
-          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+          <div className="glass-card rounded-2xl p-4 md:p-6 relative overflow-hidden hidden lg:block">
             <div className="absolute top-4 right-5 text-5xl font-serif text-primary/10 leading-none select-none">"</div>
             <p className="text-light-700 text-sm leading-relaxed italic relative z-10">
               I enjoy solving problems, building scalable applications, and continuously learning modern technologies.
@@ -163,14 +163,14 @@ const SkillsPage = () => {
 
         {/* ── Right Panel ── */}
         <motion.div
-          className="lg:col-span-3"
+          className="md:col-span-3 lg:col-span-3"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 h-full flex flex-col gap-6 sm:gap-8">
+          <div className="glass-card rounded-2xl p-4 md:p-8 h-full flex flex-col gap-6 md:gap-8">
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-light-900 mb-4 sm:mb-6">Professional Skills</h3>
+              <h3 className="text-xl font-bold text-light-900 mb-6">Professional Skills</h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {softSkills.map((skill, i) => (
@@ -200,7 +200,7 @@ const SkillsPage = () => {
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-light-700/50 mb-4">
                 At a Glance
               </p>
-              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 {[
 {value:"8+",label:"Technologies"},
 {value:"4+",label:"Languages"},
