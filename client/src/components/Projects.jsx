@@ -50,7 +50,7 @@ const FALLBACK_PROJECTS = [
       'Vercel',
       'Render'
     ],
-    category: 'Full Stack Web Development',
+    category: 'Web Development',
     liveUrl: 'https://footcap-store.netlify.app/',
     repoUrl: 'https://github.com/shreymehrotra07/FootCap',
     featured: true
