@@ -11,23 +11,48 @@ const FALLBACK_PROJECTS = [
     title: 'Portfolio Website',
     description:
       'A modern and responsive portfolio website showcasing my projects, technical skills, internship experience, and achievements. Built with smooth animations and an intuitive user interface to create a professional online presence.',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500',
+    image: 'https://res.cloudinary.com/xpfcyv3b/image/upload/f_auto,q_auto/Screenshot_2026-07-08_215656_ccny2w',
     technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'Framer Motion', 'Vercel', 'Git', 'GitHub'],
     category: 'Web Design',
     liveUrl: 'https://personal-portfolio-website-seven-olive.vercel.app/',
     repoUrl: 'https://github.com/shreymehrotra07/-Personal_Portfolio_Website',
     featured: true,
   },
+  // {
+  //   _id: 2,
+  //   title: 'MED SPACE Healthcare Management',
+  //   description:
+  //     'A full-stack healthcare management platform that streamlines patient registration, appointment scheduling, medical record management, and healthcare administration through a secure and responsive web application.',
+  //   image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500',
+  //   technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
+  //   category: 'Web Development',
+  //   liveUrl: 'https://medspace-healthcare.com',
+  //   repoUrl: 'https://github.com/shreymehrotra07/medspace-healthcare',
+  //   featured: true
+  // },
   {
-    _id: 2,
-    title: 'MED SPACE Healthcare Management',
+    _id: 3,
+    title: 'FootCap - MERN E-Commerce Platform',
     description:
-      'A full-stack healthcare management platform that streamlines patient registration, appointment scheduling, medical record management, and healthcare administration through a secure and responsive web application.',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500',
-    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
-    category: 'Web Development',
-    liveUrl: 'https://medspace-healthcare.com',
-    repoUrl: 'https://github.com/shreymehrotra07/medspace-healthcare',
+      'A production-ready full-stack e-commerce platform that enables users to browse products, manage carts and wishlists, place secure orders, and complete online payments. The platform includes role-based authentication, an admin dashboard for product and order management, and a responsive shopping experience.',
+    image: 'https://res.cloudinary.com/xpfcyv3b/image/upload/f_auto,q_auto/Screenshot_2026-07-21_154956_b57hfl',
+    technologies: [
+      'React.js',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT Authentication',
+      'Redux Toolkit',
+      'Razorpay',
+      'Cloudinary',
+      'REST APIs',
+      'Vercel',
+      'Render'
+    ],
+    category: 'Full Stack Web Development',
+    liveUrl: 'https://footcap-store.netlify.app/',
+    repoUrl: 'https://github.com/shreymehrotra07/FootCap',
     featured: true
   },
   {
@@ -35,7 +60,7 @@ const FALLBACK_PROJECTS = [
     title: 'EMATBS - Event Management & Ticket Booking System',
     description:
       'Full-stack event management platform that enables users to discover events, book tickets, and manage reservations, while providing organizers with tools to create and manage events efficiently.',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=500',
+    image: 'https://res.cloudinary.com/xpfcyv3b/image/upload/f_auto,q_auto/Screenshot_2026-07-21_160034_saegqf',
     technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Vercel'],
     category: 'Web Development',
     liveUrl: 'https://event-management-and-ticket-booking-lac.vercel.app/',
@@ -47,7 +72,7 @@ const FALLBACK_PROJECTS = [
     title: 'QuotePulse - Daily Quotes Generator',
     description:
       'A responsive quote-generator application that delivers inspiring and motivational quotes with a clean user interface. Users can discover new quotes instantly and enjoy a smooth, interactive experience across all devices.',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500',
+    image: 'https://res.cloudinary.com/xpfcyv3b/image/upload/f_auto,q_auto/Screenshot_2026-07-21_160136_duob0x',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'REST API', 'Netlify', 'Git', 'GitHub'],
     category: 'Web Application',
     liveUrl: 'https://celebrated-profiterole-9b2719.netlify.app/',
@@ -59,7 +84,7 @@ const FALLBACK_PROJECTS = [
     title: 'TaskFlow - Task Management Application',
     description:
       'A modern task management application that helps users organize, prioritize, and track daily tasks efficiently. Features an intuitive interface, task status management, and responsive design to enhance productivity across all devices.',
-    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500',
+    image: 'https://res.cloudinary.com/xpfcyv3b/image/upload/f_auto,q_auto/Screenshot_2026-07-21_160303_kq5iln',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Local Storage', 'Netlify', 'Git', 'GitHub'],
     category: 'Productivity Application',
     liveUrl: 'https://gorgeous-dragon-a4541d.netlify.app/',

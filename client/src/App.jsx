@@ -22,7 +22,7 @@ const FALLBACK_PROFILE = {
   skills: ['HTML', 'CSS', 'Tailwind', 'JavaScript'],
   learning: ['Node.js', 'Express.js', 'MongoDB'],
   socialLinks: {
-    linkedin: 'https://www.linkedin.com/in/shrey-mehrotra-8a89b9287/',
+    linkedin: 'https://www.linkedin.com/in/shrey-mehrotra-dev/',
     github: 'https://github.com/shreymehrotra07',
   },
   avatar: avatarImage,

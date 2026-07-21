@@ -45,7 +45,7 @@ const Sidebar = ({ profile }) => {
     {
       icon: FaLinkedin,
       label: 'LinkedIn',
-      href: profile?.socialLinks?.linkedin || 'https://linkedin.com/in/shrey-mehrotra-8a89b9287/',
+      href: profile?.socialLinks?.linkedin || 'https://linkedin.com/in/shrey-mehrotra-dev/',
     },
     {
       icon: FaGithub,
@@ -275,7 +275,7 @@ const Sidebar = ({ profile }) => {
             <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
             <div className="absolute inset-0 rounded-full border border-primary/10 scale-125" />
             <motion.img
-              src={profile?.avatar || ''}
+              src={'https://res.cloudinary.com/xpfcyv3b/image/upload/f_auto,q_auto/Screenshot_2026-06-15_181107_ho1vmg'}
               alt={profile?.name || 'Shrey Mehrotra'}
               className="w-20 md:w-24 lg:w-28 h-20 md:h-24 lg:h-28 rounded-full border-2 border-primary/40 object-cover relative z-10"
               whileHover={{ scale: 1.05 }}
